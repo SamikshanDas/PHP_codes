@@ -60,9 +60,9 @@ echo$ns.'<br>';
 stripos() - Finds the position of the first occurrence of a string inside another string (case-insensitive)
 
 The str_replacefunction is a case-sensitive which means that it replaces the string that exactly matches the
-string exactly. it means that if you call the function to replace the string “MFS” with “abc”, the function
-would not replace strings which consist of “mFS”,”mfs”,”MfS” because it wouldn’t consider them a complete match.
-However, the str_ireplace function php is not sensitive-rule and will treat “MFS”,”mfs”,”MfS” ….. all combination
+string exactly. it means that if you call the function to replace the string â€œMFSâ€ with â€œabcâ€, the function
+would not replace strings which consist of â€œmFSâ€,â€mfsâ€,â€MfSâ€ because it wouldnâ€™t consider them a complete match.
+However, the str_ireplace function php is not sensitive-rule and will treat â€œMFSâ€,â€mfsâ€,â€MfSâ€ â€¦.. all combination
 as a single match. Please not that this fuction is available in PHP 5 only.*/
 
 ?>
@@ -87,13 +87,17 @@ of <label> must be equal to the id attribute of the related element to bind them
 
 
 /*---------------html form----------------*/
-<html>
+
 <form action="my3rdday.php" method ="POST">
 <label for="testing">This is the label</label>
 <textarea id="testing" name="user input" rows=4 columns=30></textarea><br>
 <input type="submit" value="submit">
 </form>
-
-</html>
+<?php
+if(isset($_POST["userinput"]) && !empty($_POST["userinput"])){
+  $str=$_POST['userinput'];
+  echo"you typed: $str";
+}
+?>
 
 
