@@ -29,7 +29,7 @@ echo'<strong>Date:</strong>'.$date.'<br><Strong>Time:</strong>'.$utchour.'.'.$ut
 <label for="replace">Replace with</label><br>
 <input type="text" id="replace" name="replace"><br><br>
 <input type="submit" value="Search and Replace"><br>
-</form>I
+</form>
 
 
 <?php
