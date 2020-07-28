@@ -7,12 +7,16 @@ Y - A four digit representation of a year   ,   y - A two digit representation o
 h - 12-hour format of an hour (01 to 12)  ,  H - 24-hour format of an hour (00 to 23)
 i - Minutes with leading zeros (00 to 59)
 s - Seconds, with leading zeros (00 to 59)
+a - Lowercase am or pm   ,  A - Uppercase AM or PM
 */
 
 $time=time();
-$timenow=date('h,i,s', $time);;
+$utchour=date('h', $time)+5;//to convert UTC hour into my time
+$utcmin=date('i',$time)+30; // to convert UTC minute into my time
 $date=date('D,M,Y', $time);
-echo"<strong>Date:</strong>$date<br><Strong>Time:</strong>$timenow<br><br>";
+$ampm=date('a',$time);
+echo'<strong>Date:</strong>'.$date.'<br><Strong>Time:</strong>'.$utchour.'.'.$utcmin.' '.$ampm.'<br><br>';
+
 ?>
 
 
@@ -54,9 +58,6 @@ if(!empty($_POST['text']) && !empty($_POST['search']) && !empty($_POST['replace'
 else{
   echo"<br><br>Please fill up all the required datas...";
 }
-
-
-
 
 ?>
 
